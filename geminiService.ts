@@ -1,10 +1,15 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import { FoodItem } from "../types";
 
-// Helper to safely get the API key from the environment
+// Helper to safely get the API key from the environment without crashing the browser
 const getAIClient = () => {
-  const apiKey = process.env.API_KEY || '';
+  let apiKey = '';
+  try {
+    // Vite's define plugin will replace this string with the actual key
+    apiKey = process.env.API_KEY || '';
+  } catch (e) {
+    console.warn("API Key environment variable not yet available");
+  }
   return new GoogleGenAI({ apiKey });
 };
 
