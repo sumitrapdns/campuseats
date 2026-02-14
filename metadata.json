@@ -1,0 +1,8 @@
+{
+  "name": " CampusEats - AI Food Concierge",
+  "description": "A premium online food ordering system with intelligent meal recommendations and mood-based ordering, developed as a college mini-project.",
+  "author": "Sumitra P",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
